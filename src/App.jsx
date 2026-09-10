@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import TaskForm from './components/TaskForm'
+import TaskList from './components/TaskList'
 
 // Os outros integrantes vão importar aqui os próprios componentes:
 // import TaskList from './components/TaskList'
@@ -22,6 +23,24 @@ const App = () => {
     setTasks((prevTasks) => [...prevTasks, newTask])
   }
 
+  // Marca a tarefa como concluída ou pendente
+  const handleToggleTask = (id) => {
+  setTasks((prevTasks) =>
+    prevTasks.map((task) =>
+      task.id === id
+        ? { ...task, completed: !task.completed }
+        : task
+    )
+  )
+}
+
+// Remove a tarefa da lista
+const handleRemoveTask = (id) => {
+  setTasks((prevTasks) =>
+    prevTasks.filter((task) => task.id !== id)
+  )
+}
+
   return (
     <div className="app">
       <header>
@@ -31,9 +50,11 @@ const App = () => {
       <main>
         <TaskForm onAddTask={handleAddTask} />
 
-        {/* Espaço reservado para o componente de listagem
-            (integrante responsável por TaskList / TaskCard) */}
-        {/* <TaskList tasks={tasks} /> */}
+        <TaskList
+          tasks={tasks}
+          onToggleTask={handleToggleTask}
+          onRemoveTask={handleRemoveTask}
+        />
 
         {/* Espaço reservado para os filtros
             (Todas / Pendentes / Concluídas) */}
