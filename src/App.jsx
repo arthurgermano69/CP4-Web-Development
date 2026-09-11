@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import TaskForm from './components/TaskForm'
 import TaskList from './components/TaskList'
+import FiltroTarefas from './components/Filters'
 
 // Os outros integrantes vão importar aqui os próprios componentes:
 // import TaskList from './components/TaskList'
@@ -56,9 +57,7 @@ const handleRemoveTask = (id) => {
           onRemoveTask={handleRemoveTask}
         />
 
-        {/* Espaço reservado para os filtros
-            (Todas / Pendentes / Concluídas) */}
-        {/* <Filters /> */}
+        <FiltroTarefas tarefas={tasks}/>
       
       </main>
     </div>
