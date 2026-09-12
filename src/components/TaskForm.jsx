@@ -1,31 +1,15 @@
 import { useState } from 'react'
 
-// Componente responsável por capturar os dados de uma nova tarefa
-// e enviá-los para o componente pai através do callback onAddTask.
-
 const TaskForm = ({ onAddTask }) => {
-    
-    // Estado local do formulário: cada campo pedido no enunciado
-    // (Nome, Data, Descrição, Nível de Prioridade)
-    
     const [name, setName] = useState('')
     const [date, setDate] = useState('')
     const [description, setDescription] = useState('')
     const [priority, setPriority] = useState('media')
 
-    // Função chamada ao enviar o formulário
-    
     const handleSubmit = (event) => {
-        event.preventDefault() // evita o reload padrão do form
-
-        // Validação simples: não deixa cadastrar tarefa sem nome
-        
+        event.preventDefault()
         if (!name.trim()) return
 
-        // Monta o objeto da tarefa que será enviado pro componente pai.
-        // Cada tarefa recebe um id único baseado no timestamp e
-        // já nasce como "não concluída".
-        
         const newTask = {
             id: Date.now(),
             name,
@@ -35,13 +19,8 @@ const TaskForm = ({ onAddTask }) => {
             completed: false,
         }
 
-        // Callback: quem decide o que fazer com a tarefa (salvar no
-        // estado global / localStorage) é o componente pai, não este form.
-        
         onAddTask(newTask)
 
-        // Limpa o formulário depois de cadastrar
-        
         setName('')
         setDate('')
         setDescription('')
@@ -49,11 +28,11 @@ const TaskForm = ({ onAddTask }) => {
     }
 
     return (
-        <form className="task-form" onSubmit={handleSubmit}>
-            <h2>Nova tarefa</h2>
+        <form onSubmit={handleSubmit} className="bg-white border border-gray-200 rounded-lg p-5 flex flex-col gap-4">
+            <h2 className="text-base font-semibold text-gray-900">Nova tarefa</h2>
 
-            <div className="form-field">
-                <label htmlFor="name">Nome</label>
+            <div className="flex flex-col gap-1">
+                <label htmlFor="name" className="text-sm font-semibold text-gray-700">Nome</label>
                 <input
                     id="name"
                     type="text"
@@ -61,36 +40,40 @@ const TaskForm = ({ onAddTask }) => {
                     onChange={(e) => setName(e.target.value)}
                     placeholder="Ex: Estudar para a prova"
                     required
+                    className="border border-gray-300 rounded-md px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                 />
             </div>
 
-            <div className="form-field">
-                <label htmlFor="date">Data</label>
+            <div className="flex flex-col gap-1">
+                <label htmlFor="date" className="text-sm font-semibold text-gray-700">Data</label>
                 <input
                     id="date"
                     type="date"
                     value={date}
                     onChange={(e) => setDate(e.target.value)}
+                    className="border border-gray-300 rounded-md px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                 />
             </div>
 
-            <div className="form-field">
-                <label htmlFor="description">Descrição</label>
+            <div className="flex flex-col gap-1">
+                <label htmlFor="description" className="text-sm font-semibold text-gray-700">Descrição</label>
                 <textarea
                     id="description"
                     value={description}
                     onChange={(e) => setDescription(e.target.value)}
                     placeholder="Detalhes da tarefa"
                     rows={3}
+                    className="border border-gray-300 rounded-md px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                 />
             </div>
 
-            <div className="form-field">
-                <label htmlFor="priority">Prioridade</label>
+            <div className="flex flex-col gap-1">
+                <label htmlFor="priority" className="text-sm font-semibold text-gray-700">Prioridade</label>
                 <select
                     id="priority"
                     value={priority}
                     onChange={(e) => setPriority(e.target.value)}
+                    className="border border-gray-300 rounded-md px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                 >
                     <option value="baixa">Baixa</option>
                     <option value="media">Média</option>
@@ -98,7 +81,12 @@ const TaskForm = ({ onAddTask }) => {
                 </select>
             </div>
 
-            <button type="submit">Adicionar tarefa</button>
+            <button
+                type="submit"
+                className="self-start bg-blue-600 hover:bg-blue-700 text-white font-semibold text-sm px-4 py-2 rounded-md"
+            >
+                Adicionar tarefa
+            </button>
         </form>
     )
 }

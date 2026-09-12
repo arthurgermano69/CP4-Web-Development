@@ -6,3 +6,4 @@
 // - Ler o valor salvo no localStorage ao iniciar
 // - Sincronizar automaticamente sempre que o estado mudar (useEffect)
 // - Expor a mesma API do useState: [value, setValue]
+
