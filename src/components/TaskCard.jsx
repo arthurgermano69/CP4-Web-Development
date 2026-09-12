@@ -8,8 +8,12 @@ function TaskCard({ task, onToggleTask, onRemoveTask }) {
     const priority = priorityStyles[task.priority] ?? priorityStyles.media
 
     return (
-        <div className={`bg-white border border-gray-200 border-l-4 ${priority.border} rounded-lg p-4`}>
-            <h3 className="text-base font-semibold text-gray-900">{task.name}</h3>
+        <div
+            className={`bg-white border border-gray-200 border-l-4 ${priority.border} rounded-lg p-4 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-200 ${task.completed ? 'opacity-70' : ''}`}
+        >
+            <h3 className={`text-base font-semibold ${task.completed ? 'text-gray-500 line-through' : 'text-gray-900'}`}>
+                {task.name}
+            </h3>
 
             <p className="text-sm text-gray-600 mt-2">
                 <span className="font-semibold text-gray-800">Data:</span> {task.date || 'Sem data'}
@@ -31,14 +35,14 @@ function TaskCard({ task, onToggleTask, onRemoveTask }) {
             <div className="flex gap-2 mt-4">
                 <button
                     onClick={() => onToggleTask(task.id)}
-                    className="bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold px-3 py-1.5 rounded-md"
+                    className="bg-indigo-600 hover:bg-indigo-700 active:scale-95 text-white text-sm font-semibold px-3 py-1.5 rounded-md transition-all duration-150"
                 >
                     {task.completed ? 'Marcar como pendente' : 'Concluir'}
                 </button>
 
                 <button
                     onClick={() => onRemoveTask(task.id)}
-                    className="bg-white border border-red-600 text-red-600 hover:bg-red-50 text-sm font-semibold px-3 py-1.5 rounded-md"
+                    className="bg-white border border-red-600 text-red-600 hover:bg-red-600 hover:text-white active:scale-95 text-sm font-semibold px-3 py-1.5 rounded-md transition-all duration-150"
                 >
                     Remover
                 </button>

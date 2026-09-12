@@ -28,7 +28,10 @@ const TaskForm = ({ onAddTask }) => {
     }
 
     return (
-        <form onSubmit={handleSubmit} className="bg-white border border-gray-200 rounded-lg p-5 flex flex-col gap-4">
+        <form
+            onSubmit={handleSubmit}
+            className="bg-white border border-gray-200 rounded-lg p-5 flex flex-col gap-4 shadow-sm hover:shadow-md transition-shadow duration-200"
+        >
             <h2 className="text-base font-semibold text-gray-900">Nova tarefa</h2>
 
             <div className="flex flex-col gap-1">
@@ -40,7 +43,7 @@ const TaskForm = ({ onAddTask }) => {
                     onChange={(e) => setName(e.target.value)}
                     placeholder="Ex: Estudar para a prova"
                     required
-                    className="border border-gray-300 rounded-md px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                    className="border border-gray-300 rounded-md px-3 py-2 text-sm transition-colors duration-150 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 hover:border-gray-400"
                 />
             </div>
 
@@ -51,7 +54,7 @@ const TaskForm = ({ onAddTask }) => {
                     type="date"
                     value={date}
                     onChange={(e) => setDate(e.target.value)}
-                    className="border border-gray-300 rounded-md px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                    className="border border-gray-300 rounded-md px-3 py-2 text-sm transition-colors duration-150 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 hover:border-gray-400"
                 />
             </div>
 
@@ -63,7 +66,7 @@ const TaskForm = ({ onAddTask }) => {
                     onChange={(e) => setDescription(e.target.value)}
                     placeholder="Detalhes da tarefa"
                     rows={3}
-                    className="border border-gray-300 rounded-md px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                    className="border border-gray-300 rounded-md px-3 py-2 text-sm transition-colors duration-150 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 hover:border-gray-400"
                 />
             </div>
 
@@ -73,7 +76,7 @@ const TaskForm = ({ onAddTask }) => {
                     id="priority"
                     value={priority}
                     onChange={(e) => setPriority(e.target.value)}
-                    className="border border-gray-300 rounded-md px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                    className="border border-gray-300 rounded-md px-3 py-2 text-sm transition-colors duration-150 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 hover:border-gray-400"
                 >
                     <option value="baixa">Baixa</option>
                     <option value="media">Média</option>
@@ -83,7 +86,7 @@ const TaskForm = ({ onAddTask }) => {
 
             <button
                 type="submit"
-                className="self-start bg-blue-600 hover:bg-blue-700 text-white font-semibold text-sm px-4 py-2 rounded-md"
+                className="self-start bg-indigo-600 hover:bg-indigo-700 active:scale-95 text-white font-semibold text-sm px-4 py-2 rounded-md transition-all duration-150 shadow-sm hover:shadow"
             >
                 Adicionar tarefa
             </button>
