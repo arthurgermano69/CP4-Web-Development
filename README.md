@@ -1,21 +1,27 @@
-CP4 Web Development
+# Tarefas
 
-Aplicação web para gerenciar tarefas do dia a dia, construída em React + Vite. Permite cadastrar tarefas com nome, data, descrição e prioridade, marcá-las como concluídas, removê-las e filtrá-las por status ou busca por texto — tudo salvo automaticamente no localStorage do navegador.
+Aplicação web para gerenciar tarefas do dia a dia, construída em **React + Vite**. Permite cadastrar tarefas com nome, data, descrição e prioridade, marcá-las como concluídas, removê-las e filtrá-las por status ou busca por texto — tudo salvo automaticamente no `localStorage` do navegador.
 
-Funcionalidades
-✅ Adicionar tarefas com nome, data, descrição e prioridade (baixa, média, alta)
-✅ Marcar tarefas como concluídas / pendentes
-✅ Remover tarefas
-🔍 Buscar tarefas pelo nome
-🗂️ Filtrar tarefas por status (todas, pendentes, concluídas)
-📊 Painel com totais de tarefas (total, pendentes, concluídas)
-💾 Persistência automática dos dados no localStorage, sem precisar de backend
-Tecnologias utilizadas
-React 19
-Vite
-Tailwind CSS 4
-ESLint
-Estrutura do projeto
+## Funcionalidades
+
+- ✅ Adicionar tarefas com nome, data, descrição e prioridade (baixa, média, alta)
+- ✅ Marcar tarefas como concluídas / pendentes
+- ✅ Remover tarefas
+- 🔍 Buscar tarefas pelo nome
+- 🗂️ Filtrar tarefas por status (todas, pendentes, concluídas)
+- 📊 Painel com totais de tarefas (total, pendentes, concluídas)
+- 💾 Persistência automática dos dados no `localStorage`, sem precisar de backend
+
+## Tecnologias utilizadas
+
+- [React 19](https://react.dev/)
+- [Vite](https://vitejs.dev/)
+- [Tailwind CSS 4](https://tailwindcss.com/)
+- [ESLint](https://eslint.org/)
+
+## Estrutura do projeto
+
+```
 src/
 ├── components/
 │   ├── Filters.jsx     # Busca e filtro de tarefas por status
@@ -27,11 +33,13 @@ src/
 ├── App.jsx             # Componente principal
 ├── main.jsx            # Ponto de entrada da aplicação
 └── index.css           # Estilos globais / Tailwind
-Como rodar o projeto
+```
 
-Pré-requisitos: Node.js instalado (recomenda-se a versão 18 ou superior).
+## Como rodar o projeto
 
-bash
+Pré-requisitos: [Node.js](https://nodejs.org/) instalado (recomenda-se a versão 18 ou superior).
+
+```bash
 # Clone o repositório
 git clone https://github.com/arthurgermano69/CP4-Web-Development.git
 
@@ -43,12 +51,19 @@ npm install
 
 # Rode o servidor de desenvolvimento
 npm run dev
+```
 
-Depois disso, abra o endereço exibido no terminal (geralmente http://localhost:5173) no navegador.
+Depois disso, abra o endereço exibido no terminal (geralmente `http://localhost:5173`) no navegador.
 
-Desenvolvido por: 
+### Outros scripts disponíveis
 
-Arthur Germano Pinheiro (rm574042) 
-Artur de Novazzi Maia (rm572624)
-Bruno Araujo Castro (rm572723)
-João Pedro De Souza (rm571437)
+| Comando           | Descrição                                      |
+| ----------------- | ----------------------------------------------- |
+| `npm run dev`      | Inicia o servidor de desenvolvimento            |
+| `npm run build`    | Gera a versão de produção do projeto            |
+| `npm run preview`  | Pré-visualiza a build de produção localmente    |
+| `npm run lint`     | Executa o ESLint para checar problemas no código |
+
+## Autor
+
+Desenvolvido por [Arthur Germano](https://github.com/arthurgermano69) como projeto acadêmico da disciplina de Web Development.
