@@ -1,16 +1,54 @@
-# React + Vite
+CP4 Web Development
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Aplicação web para gerenciar tarefas do dia a dia, construída em React + Vite. Permite cadastrar tarefas com nome, data, descrição e prioridade, marcá-las como concluídas, removê-las e filtrá-las por status ou busca por texto — tudo salvo automaticamente no localStorage do navegador.
 
-Currently, two official plugins are available:
+Funcionalidades
+✅ Adicionar tarefas com nome, data, descrição e prioridade (baixa, média, alta)
+✅ Marcar tarefas como concluídas / pendentes
+✅ Remover tarefas
+🔍 Buscar tarefas pelo nome
+🗂️ Filtrar tarefas por status (todas, pendentes, concluídas)
+📊 Painel com totais de tarefas (total, pendentes, concluídas)
+💾 Persistência automática dos dados no localStorage, sem precisar de backend
+Tecnologias utilizadas
+React 19
+Vite
+Tailwind CSS 4
+ESLint
+Estrutura do projeto
+src/
+├── components/
+│   ├── Filters.jsx     # Busca e filtro de tarefas por status
+│   ├── TaskCard.jsx    # Card individual de cada tarefa
+│   ├── TaskForm.jsx    # Formulário de criação de tarefas
+│   └── TaskList.jsx    # Lista de tarefas cadastradas
+├── hooks/
+│   └── useLocalStorage.js  # Hook para persistir estado no localStorage
+├── App.jsx             # Componente principal
+├── main.jsx            # Ponto de entrada da aplicação
+└── index.css           # Estilos globais / Tailwind
+Como rodar o projeto
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Pré-requisitos: Node.js instalado (recomenda-se a versão 18 ou superior).
 
-## React Compiler
+bash
+# Clone o repositório
+git clone https://github.com/arthurgermano69/CP4-Web-Development.git
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+# Entre na pasta do projeto
+cd CP4-Web-Development
 
-## Expanding the ESLint configuration
+# Instale as dependências
+npm install
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+# Rode o servidor de desenvolvimento
+npm run dev
+
+Depois disso, abra o endereço exibido no terminal (geralmente http://localhost:5173) no navegador.
+
+Desenvolvido por: 
+
+Arthur Germano Pinheiro (rm574042) 
+Artur de Novazzi Maia (rm572624)
+Bruno Araujo Castro (rm572723)
+João Pedro De Souza (rm571437)
