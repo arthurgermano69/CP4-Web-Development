@@ -1,4 +1,4 @@
-# Tarefas
+# CP4 Web Development
 
 Aplicação web para gerenciar tarefas do dia a dia, construída em **React + Vite**. Permite cadastrar tarefas com nome, data, descrição e prioridade, marcá-las como concluídas, removê-las e filtrá-las por status ou busca por texto — tudo salvo automaticamente no `localStorage` do navegador.
 
@@ -37,7 +37,7 @@ src/
 
 ## Como rodar o projeto
 
-Pré-requisitos: [Node.js](https://nodejs.org/) instalado (recomenda-se a versão 18 ou superior).
+Pré-requisitos: [Node.js](https://nodejs.org/) instalado
 
 ```bash
 # Clone o repositório
@@ -55,15 +55,9 @@ npm run dev
 
 Depois disso, abra o endereço exibido no terminal (geralmente `http://localhost:5173`) no navegador.
 
-### Outros scripts disponíveis
+## Desenvolvido por
 
-| Comando           | Descrição                                      |
-| ----------------- | ----------------------------------------------- |
-| `npm run dev`      | Inicia o servidor de desenvolvimento            |
-| `npm run build`    | Gera a versão de produção do projeto            |
-| `npm run preview`  | Pré-visualiza a build de produção localmente    |
-| `npm run lint`     | Executa o ESLint para checar problemas no código |
-
-## Autor
-
-Desenvolvido por [Arthur Germano](https://github.com/arthurgermano69) como projeto acadêmico da disciplina de Web Development.
+- Arthur Germano Pinheiro (rm574042)
+- Artur de Novazzi Maia (rm572624)
+- Bruno Araujo Castro (rm572723)
+- João Pedro De Souza (rm571437)
